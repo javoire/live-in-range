@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,800|Fjalla+One|Roboto+Condensed:400,700);
+
+@brand-primary: #FF889F;
+@brand-primary-dark: #EA7A90;
+@brand-secondary: rgb(142, 231, 163);
+
+body {
+  background: url('/img/bg.jpg') top center;
+  font-family: 'Roboto Condensed';
+}
+
+.main {
+  transition: -webkit-filter .1s;
+  &.blur {
+    -webkit-filter: blur(10px)
+  }
+}
+
+.logo {
+  font-family: Dosis;
+  font-weight: 800;
+  color: white;
+  font-size: 1.9em;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.home-query {
+  width: 500px;
+  margin: 150px auto 0;
+  text-align: center;
+  color: @brand-primary;
+  line-height: 1.4em;
+  font-size: 1.3em;
+
+  strong {
+    transform: scale(1);
+    transition: color .1s, transform .1s;
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+      transform: scale(1.1);
+      color: @brand-secondary;
+    }
+  }
+}
+
+.home-query-btn {
+  transition: border-color .1s, color .1s;
+  display: block;
+  margin: 20px auto 0;
+  background-color: transparent;
+  border: 2px solid rgba(255, 136, 159, 0.2);
+  color: @brand-primary;
+  padding: 15px 40px;
+  border-radius: 8px;
+  outline-width: 0;
+  font-family: Dosis;
+
+  &:hover {
+    border-color: @brand-secondary;
+    color: @brand-secondary;
+
+    &:active {
+      // border-color: @brand-primary-dark;
+    }
+  }
+}
+
+.vertical-select {
+  transition: opacity .1s, transform .1s;
+  opacity: 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  z-index: 20000;
+  position: fixed;
+  left: -1000px; // so its not in the way
+  top: 0;
+  bottom: 0;
+  padding: 0 20px;
+  border-left: 2px solid @brand-secondary;
+  border-right: 2px solid @brand-secondary;
+  color: @brand-secondary;
+  &.show {
+    transform: scale(1.1);
+    opacity: 1;
+    left: 529px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 183px;
+    li {
+      transition: transform .1s, opacity .1s;
+      opacity: .7;
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}
